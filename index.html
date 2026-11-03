@@ -251,7 +251,7 @@
 
     .brand img {
       width: 174px;
-      height: 60px;
+      height: 45px;
       object-fit: contain;
       object-position: left center
     }
@@ -1351,7 +1351,7 @@
 
     .footer-about .brand img {
       width: 166px;
-      height: 50px
+      height: 45px
     }
 
     .footer-about p {
@@ -1497,7 +1497,7 @@
 
       .brand img {
         width: 143px;
-        height: 50px
+        height: 45px
       }
 
       .nav-links {
@@ -1861,7 +1861,7 @@
 
       .footer-about .brand img {
         width: 145px;
-        height: 55px
+        height: 45px
       }
 
       .footer-bottom {
@@ -3167,7 +3167,7 @@
     (() => {
       const root = document.documentElement, themeToggle = document.getElementById('themeToggle');
       let saved = null; try { saved = localStorage.getItem('rubc-theme') } catch (e) { }
-      const systemPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      const systemPref = !window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       function applyTheme(theme) {
         root.dataset.theme = theme; themeToggle.textContent = theme === 'dark' ? '☼' : '☾';
         themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
