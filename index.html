@@ -622,6 +622,8 @@
     .event-tags {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       gap: 8px;
       margin-bottom: 20px
     }
@@ -851,6 +853,7 @@
 
     .journey-card {
       border-radius: 20px;
+      height: fit-content !important;
       overflow: hidden;
       transition: transform .25s, border-color .25s, box-shadow .25s
     }
@@ -951,11 +954,20 @@
       border-radius: 15px;
       display: grid;
       place-items: center;
-      padding: 13px;
+      /* padding: 13px; */
       text-align: center;
       color: var(--muted);
       font-size: .68rem;
       background: rgba(255, 255, 255, .025)
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 15px;
+
     }
 
     .partner-logo strong {
@@ -1639,7 +1651,7 @@
       }
 
       .event-poster img {
-        max-height: 170px;
+        /* max-height: 170px; */
         /* width: 90% */
       }
 
@@ -1802,7 +1814,7 @@
 
       .partner-logo {
         min-height: 70px;
-        padding: 9px
+        /* padding: 9px */
       }
 
       .about-grid {
@@ -1859,7 +1871,7 @@
       }
     }
 
-    @media(max-width:425px) {
+    @media(max-width:450px) {
 
 
       .event-poster {
@@ -1896,25 +1908,33 @@
       .hey {
         display: flex;
         justify-content: center !important;
+        align-items: center !important;
+        width: 100%;
         margin: 10px 0;
       }
 
       .event-tags {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        /* gap: 10px; */
+        /* margin: 10px 0; */
       }
 
       .event-tag {
-        margin: auto;
+        /* margin: auto; */
         padding: 7px 13px;
         border: 1px solid rgba(255, 255, 255, .16);
         border-radius: 99px;
         background: rgba(255, 255, 255, .065);
         font-size: .53rem;
         color: #f3e5ef;
-        font-weight: 700
+        font-weight: 700;
+
+        flex: 0 0 auto;
+        width: fit-content;
+
       }
 
       .section {
@@ -2801,13 +2821,17 @@
           </div> -->
           <div class="event-layout">
 
-            <div class="event-poster"><img src="cs3.jpg" alt="Official CASECATION Season 3 artwork">
+            <div>
+              <div class="event-poster">
+                <img src="cs3.jpg" alt="Official CASECATION Season 3 artwork">
+
+              </div>
               <div class="event-tags" style="margin: 10px 0;">
                 <span class="event-tag">2–4 Members / Team</span>
                 <span class="event-tag">Registration Fee: ৳550 / Team</span>
-                <span class="event-tag">Total Prize Pool: ৳1,50,000</span></div>
+                <span class="event-tag">Total Prize Pool: ৳1,50,000</span>
+              </div>
             </div>
-
             <div class="event-info">
               <h3>Nabil Group presents <span style="color:#ffbd83">CASECATION — Season 3</span></h3>
               <div class="hey" style="display: flex;justify-content: start;">
@@ -2954,7 +2978,7 @@
               <p>Initiatives that bring students together and create meaningful opportunities.</p>
             </div>
           </article>
-          <article class="journey-card glass reveal" data-category="competition">
+          <article class="journey-card glass reveal" data-category="workshop">
             <div class="journey-image"><span class="year">Year to add</span>
               <!-- <span class="placeholder-mark">BUILD</span> -->
               <img src="futuremakers.jpg" alt="Other Competitions event artwork">
@@ -2979,18 +3003,20 @@
           <div class="partner-group">
             <h3>Presenting partner</h3>
             <div class="partner-logos">
-              <div class="partner-logo">
-                <div class="nabil-wordmark">NABIL GROUP<small>CASECATION Season 3 · Presenting Partner</small></div>
-              </div>
+              <img src="nabil.png" style="max-height: 200px;" alt="Nabil Group logo" class="partner-logo">
             </div>
           </div>
           <div class="partner-group">
             <h3>Corporate partners & collaborators</h3>
             <div class="partner-logos">
-              <div class="partner-logo">Partner logo placeholder</div>
-              <div class="partner-logo">Partner logo placeholder</div>
-              <div class="partner-logo">Partner logo placeholder</div>
-              <div class="partner-logo">Partner logo placeholder</div>
+              <div class="partner-logo"><img src="aci.jpg" alt=""></div>
+              <div class="partner-logo"><img src="gp.jpg" alt=""></div>
+              <div class="partner-logo"><img src="marico.png" alt=""></div>
+              <div class="partner-logo"><img src="apex.jpg" alt=""></div>
+              <div class="partner-logo"><img src="pran.jpg" alt=""></div>
+              <div class="partner-logo"><img src="bl.jpg" alt=""></div>
+              <div class="partner-logo"><img src="robi.jpg" alt=""></div>
+              <div class="partner-logo"><img src="coca.jpg" alt=""></div>            
             </div>
           </div>
           <p class="archive-note">Only the CASECATION 3 presenting relationship has been populated from the supplied
