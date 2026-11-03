@@ -55,9 +55,9 @@
       box-sizing: border-box;
     }
 
-    .hero-actions > .btn:nth-of-type(2),.event-actions > .btn:nth-of-type(1){
+    .hero-actions>.btn:nth-of-type(2),
+    .event-actions>.btn:nth-of-type(1) {
       animation: bFloat 6s ease-in-out infinite
-
     }
 
     html {
@@ -509,20 +509,22 @@
     }
 
     @keyframes bFloat {
-  0%, 100% {
-    transform: translateY(0);
-    box-shadow: 0 4px 18px rgba(255, 190, 80, 0.10);
-  }
 
-  50% {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 28px rgba(255, 190, 80, 0.22);
-  }
-}
+      0%,
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 4px 18px rgba(255, 190, 80, 0.10);
+      }
 
-.hero button {
-  animation: bFloat 5s ease-in-out infinite;
-}
+      50% {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 28px rgba(255, 190, 80, 0.22);
+      }
+    }
+
+    .hero button {
+      animation: bFloat 5s ease-in-out infinite;
+    }
 
     @keyframes aura {
       from {
@@ -567,24 +569,25 @@
     }
 
     .event-poster {
-      min-height: 330px;
+      /* min-height: 330px; */
       border-radius: 21px;
       display: grid;
       place-items: center;
-      padding: 25px;
+      /* padding: 25px; */
       background: radial-gradient(circle at 50% 50%, rgba(240, 120, 85, .13), transparent 65%), linear-gradient(145deg, #24172a, #100b16);
       border: 1px solid rgba(255, 255, 255, .15)
     }
 
     .event-poster img {
       width: 100%;
-      max-height: 285px;
+      /* max-height: 285px; */
       object-fit: contain;
+      border-radius: 10px;
       filter: drop-shadow(0 15px 28px rgba(0, 0, 0, .32))
     }
 
     .event-info {
-      padding: 8px 8px 8px 0
+      padding: 0 8px
     }
 
     .event-status {
@@ -1632,12 +1635,12 @@
 
       .event-poster {
         min-height: 205px;
-        padding: 16px
+        /* padding: 16px */
       }
 
       .event-poster img {
         max-height: 170px;
-        width: 90%
+        /* width: 90% */
       }
 
       .event-info {
@@ -1858,15 +1861,33 @@
 
     @media(max-width:425px) {
 
-      .hero {
-      min-height: 700px;
-      padding: 70px 0 75px;
-      display: flex;
-      align-items: center;
-      overflow: hidden
-    }
 
-      .event-info{
+      .event-poster {
+        min-height: auto;
+        /* outline: 1px solid red; */
+        margin: 5px;
+      }
+
+      .event-poster img {
+        height: 100%;
+        border-radius: 13px !important;
+        max-height: 100%;
+        width: fit-content;
+        padding: 0px;
+        margin: 0px;
+        /* outline: 1px solid red; */
+      }
+
+
+      .hero {
+        min-height: 700px;
+        padding: 70px 0 75px;
+        display: flex;
+        align-items: center;
+        overflow: hidden
+      }
+
+      .event-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1878,25 +1899,25 @@
         margin: 10px 0;
       }
 
-      .event-tags{
+      .event-tags {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
-      
-      .event-tag {
-      margin: auto;
-      padding: 7px 13px;
-      border: 1px solid rgba(255, 255, 255, .16);
-      border-radius: 99px;
-      background: rgba(255, 255, 255, .065);
-      font-size: .53rem;
-      color: #f3e5ef;
-      font-weight: 700
-    }
 
-    .section {
+      .event-tag {
+        margin: auto;
+        padding: 7px 13px;
+        border: 1px solid rgba(255, 255, 255, .16);
+        border-radius: 99px;
+        background: rgba(255, 255, 255, .065);
+        font-size: .53rem;
+        color: #f3e5ef;
+        font-weight: 700
+      }
+
+      .section {
         padding: 10px 0
       }
 
@@ -2720,8 +2741,7 @@
   <header class="site-nav" id="siteNav">
     <div class="container">
       <nav class="nav-inner glass" aria-label="Main navigation">
-        <a class="brand" href="#home"
-          aria-label="RUBC home"><img src="logo.png"></a>
+        <a class="brand" href="#home" aria-label="RUBC home"><img src="logo.png"></a>
         <div class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#events">Events</a><a href="#journey">Our
             Journey</a><a href="#partners">Partners</a><a href="#voices">Member Voices</a><a href="#join">Join
             RUBC</a><a href="#about">About</a></div>
@@ -2745,7 +2765,8 @@
             new perspectives, sharpen practical skills, and build the confidence to take on what comes next.</p>
           <div class="hero-actions">
             <a class="btn btn-outline" href="#events">Discover Events ↓</a>
-            <a class="btn btn-primary" href="#journey">Explore Our Journey ↗</a></div>
+            <a class="btn btn-primary" href="#journey">Explore Our Journey ↗</a>
+          </div>
           <div class="hero-meta"><span><i></i>A student-led business community</span><span>University of Rajshahi</span>
           </div>
         </div>
@@ -2779,24 +2800,26 @@
             <h3>Nabil Group presents <span style="color:#ffbd83">CASECATION — Season 3</span></h3>
           </div> -->
           <div class="event-layout">
-            <div class="event-poster"><img
-                src="cs3.png"                
-                alt="Official CASECATION Season 3 artwork">
-              <div class="event-tags"><span class="event-tag">2–4 Members
-                  / Team</span><span class="event-tag">Registration Fee: ৳550 / Team</span><span class="event-tag">Total
-                  Prize Pool: TBA</span></div>
-              </div>
+
+            <div class="event-poster"><img src="cs3.jpg" alt="Official CASECATION Season 3 artwork">
+              <div class="event-tags" style="margin: 10px 0;">
+                <span class="event-tag">2–4 Members / Team</span>
+                <span class="event-tag">Registration Fee: ৳550 / Team</span>
+                <span class="event-tag">Total Prize Pool: ৳1,50,000</span></div>
+            </div>
+
             <div class="event-info">
               <h3>Nabil Group presents <span style="color:#ffbd83">CASECATION — Season 3</span></h3>
               <div class="hey" style="display: flex;justify-content: start;">
-                <div class="event-status"><span class="pulse"></span><span id="eventStatus">REGISTRATION OPEN &nbsp;</span>
+                <div class="event-status"><span class="pulse"></span><span id="eventStatus">REGISTRATION OPEN
+                    &nbsp;</span>
                 </div>
                 <span class="eyebrow" style="color:#ffbd83">Featured event</span>
               </div>
               <p><strong>Case it. Crack it. Cash it.</strong> Organised by Rajshahi University Business Club. After two
                 remarkable editions, CaseCation returns to bring another exhilarating opportunity to challenge
                 conventions, demonstrate strategic thinking, and turn innovative ideas into impactful solutions.</p>
-              
+
               <div class="event-actions"><a class="btn btn-gold"
                   href="https://casecation.rubusinessclub.com/register.php" target="_blank" rel="noopener">Register Your
                   Team ↗</a><a class="btn btn-outline" href="https://casecation.rubusinessclub.com/#payment"
@@ -2876,31 +2899,45 @@
             archive</span>
         </div>
         <div class="journey-grid" id="journeyGrid">
+
           <article class="journey-card glass reveal" data-category="competition">
-            <div class="journey-image"><span class="year">2026</span><span class="placeholder-mark">IGNITE</span></div>
+            <div class="journey-image"><span class="year">2026</span>
+              <!-- <span class="placeholder-mark">IGNITE</span> -->
+              <img src="ignite.jpg" alt="IGNITE 8.0 event artwork">
+            </div>
             <div class="journey-content"><span class="journey-category">Competition · 2026</span>
               <h3>IGNITE 8.0</h3>
               <p>Business case challenge and strategic problem-solving. Replace with the official event summary and
                 photographs.</p>
             </div>
           </article>
+
           <article class="journey-card glass reveal" data-category="competition">
-            <div class="journey-image"><span class="year">2026</span><span class="placeholder-mark">CASE</span></div>
+            <div class="journey-image"><span class="year">2026</span>
+              <!-- <span class="placeholder-mark">CASE</span> -->
+              <img src="unravel.jpg" alt="Unravel Hexa event artwork">
+            </div>
             <div class="journey-content"><span class="journey-category">Competition · 2026</span>
-              <h3>CASECATION — Previous Seasons</h3>
+              <h3>Unravel Hexa</h3>
               <p>A look back at earlier editions of the club's flagship case competition. Add verified season details.
               </p>
             </div>
           </article>
+
           <article class="journey-card glass reveal" data-category="recruitment">
-            <div class="journey-image"><span class="year">2026</span><span class="placeholder-mark">RUBC</span></div>
+            <div class="journey-image"><span class="year">2026</span>
+              <!-- <span class="placeholder-mark">RUBC</span> -->
+              <img src="recruitment.jpg" alt="11th RUBC Recruitment event artwork">
+            </div>
             <div class="journey-content"><span class="journey-category">Recruitment · 2026</span>
               <h3>11th RUBC Recruitment</h3>
               <p>Welcoming new talent and future contributors to the RUBC community. Add official highlights.</p>
             </div>
           </article>
           <article class="journey-card glass reveal" data-category="workshop">
-            <div class="journey-image"><span class="year">Year to add</span><span class="placeholder-mark">LEARN</span>
+            <div class="journey-image"><span class="year">Year to add</span>
+              <!-- <span class="placeholder-mark">LEARN</span> -->
+              <img src="mavireck.jpg" alt="Workshops & Learning Sessions event artwork">
             </div>
             <div class="journey-content"><span class="journey-category">Workshop · Year to add</span>
               <h3>Workshops & Learning Sessions</h3>
@@ -2908,7 +2945,9 @@
             </div>
           </article>
           <article class="journey-card glass reveal" data-category="initiative">
-            <div class="journey-image"><span class="year">Year to add</span><span class="placeholder-mark">IDEAS</span>
+            <div class="journey-image"><span class="year">Year to add</span>
+              <!-- <span class="placeholder-mark">IDEAS</span> -->
+              <img src="unicef.jpg" alt="Community Initiatives event artwork">
             </div>
             <div class="journey-content"><span class="journey-category">Initiative · Year to add</span>
               <h3>Community Initiatives</h3>
@@ -2916,7 +2955,9 @@
             </div>
           </article>
           <article class="journey-card glass reveal" data-category="competition">
-            <div class="journey-image"><span class="year">Year to add</span><span class="placeholder-mark">BUILD</span>
+            <div class="journey-image"><span class="year">Year to add</span>
+              <!-- <span class="placeholder-mark">BUILD</span> -->
+              <img src="futuremakers.jpg" alt="Other Competitions event artwork">
             </div>
             <div class="journey-content"><span class="journey-category">Competition · Year to add</span>
               <h3>Other Competitions</h3>
@@ -3031,7 +3072,8 @@
           <div class="cv-copy"><span class="eyebrow">Your next opportunity</span>
             <h2>Bring your ideas.<br><span class="gradient-text">Build with RUBC.</span></h2>
             <p>Interested in joining the RUBC community? We are always keen to meet curious, motivated students who want
-              to learn, contribute, and grow with others. Tell us a little about yourself, the areas you are interested in, and what you hope to bring to the club.</p>
+              to learn, contribute, and grow with others. Tell us a little about yourself, the areas you are interested
+              in, and what you hope to bring to the club.</p>
             <!-- <p>Tell us a little about yourself, the areas you are interested in, and what you hope to bring to the club.
               Whether your strengths lie in communication, research, design, event management, marketingthere is room to explore and develop your potential at RUBC.</p>
             <p>Share your CV and contact details below. </p> -->
@@ -3076,8 +3118,7 @@
   <footer>
     <div class="container">
       <div class="footer-main">
-        <div class="footer-about"><a class="brand" href="#home"><img
-              src="logo.png"
+        <div class="footer-about"><a class="brand" href="#home"><img src="logo.png"
               alt="Rajshahi University Business Club official logo"></a>
           <p>Building minds and creating opportunities beyond the classroom at the University of Rajshahi.</p>
         </div>
